@@ -1,4 +1,4 @@
-import {FlatList, Image, Text, View} from "react-native";
+import {FlatList, Image, ScrollView, Text, View} from "react-native";
 import minh from "./minh.jpg"
 import phuong from "./phuong.jpg"
 import ngan from "./ngan.jpg"
@@ -53,10 +53,10 @@ export default function () {
         },
     ];
     return (
-        <View>
+        <ScrollView>
             <Text  style={styles.header}>This awsome app is developed by
                 <Text style={{fontStyle: "italic", color: "#006ab2"}}> dbt's team </Text>
-                under help of Vo Tan Toan lecturers
+                under help of Vo Tan Toan lecturer
             </Text>
             <View style={styles.members}>
                 <Text style={{fontSize: 18, margin: 10, fontWeight: "bold"}}>
@@ -88,6 +88,6 @@ export default function () {
                               </View>
                           }}/>
             </View>
-        </View>
+        </ScrollView>
     )
 }

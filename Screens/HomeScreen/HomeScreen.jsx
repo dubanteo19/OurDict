@@ -92,7 +92,6 @@ export default function HomeScreen(props) {
     }
 
     function handlePress(input) {
-        console.log(input)
         fetchData(input)
         setWord(input);
     }
