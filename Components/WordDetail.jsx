@@ -37,20 +37,20 @@ export default function WordDetail(props) {
     }
     const meanings = props.data.meanings.map((item, index) => {
         return (
-            <View style={styles.partOfSpeech}>
+            <View key={item+index} style={styles.partOfSpeech}>
                 <Text>Part of speech: <Text style={{fontWeight: "bold"}}>{item.partOfSpeech}</Text></Text>
                 <Text style={{fontWeight: "bold"}}>Definitions</Text>
                 <View style={styles.definitions}>
-                    {item.definitions.slice(0, 5).map((item) => {
-                        return (<View>
+                    {item.definitions.slice(0, 5).map((item,index) => {
+                        return (<View key={index}>
                             <Text><Entypo name="dot-single" size={24} color="black"/> {item.definition}</Text>
                         </View>)
                     })}
                 </View>
                 {item.synonyms.length > 0 && <Text style={{fontWeight: "bold"}}>Synonyms</Text>}
                 <View style={styles.synonyms}>
-                    {item.synonyms.map((item) => {
-                        return (<TouchableOpacity onPress={() => {
+                    {item.synonyms.map((item,index) => {
+                        return (<TouchableOpacity key={index} onPress={() => {
                             props.handlePress(item)
                         }}>
                             <Text style={styles.pressWord}>{item}</Text>
@@ -75,7 +75,7 @@ export default function WordDetail(props) {
     })
         .map((item, index) => {
             return (
-                <View style={{flexDirection: "row", marginRight: 20, width: 100}}>
+                <View key={index} style={{flexDirection: "row", marginRight: 20, width: 100}}>
                     <Text>{index === 0 ? "US" : "UK"} {item.text}    </Text>
                     <TouchableOpacity onPress={() => {
                         playSound(item.audio)
@@ -91,9 +91,6 @@ export default function WordDetail(props) {
             <View style={{flexDirection: "row"}}>
                 {phonetics}
             </View>
-            {props.data.origin && <View>
-                <Text><Text style={{fontWeight: "bold"}}>Origin: </Text>{props.data.origin}</Text>
-            </View>}
             <View style={styles.meanings}>
                 {meanings}
             </View>
