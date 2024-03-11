@@ -147,7 +147,7 @@ export default function HomeScreen(props) {
                     {wordReady() &&
                         <WordDetail data={data[0]} handlePress={handlePress}/>}
                     {data.message && !isLoading && <Text>{data.message}</Text>}
-                    {word && !isLoading &&
+                    {!wordReady() && !isLoading &&
                         <View style={{flexDirection: "row", flexWrap: "wrap"}}>{suggestionsElements}</View>}
                 </View>
             </ScrollView>

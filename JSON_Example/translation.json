@@ -1,0 +1,62 @@
+{
+  "responseData": {
+    "translatedText": "yêu",
+    "match": 0.98
+  },
+  "quotaFinished": false,
+  "mtLangSupported": null,
+  "responseDetails": "",
+  "responseStatus": 200,
+  "responderId": null,
+  "exception_code": null,
+  "matches": [
+    {
+      "id": "438795118",
+      "segment": "love",
+      "translation": "yêu",
+      "source": "en-GB",
+      "target": "vi-VN",
+      "quality": "74",
+      "reference": null,
+      "usage-count": 2,
+      "subject": "All",
+      "created-by": "MateCat",
+      "last-updated-by": "MateCat",
+      "create-date": "2020-04-26 17:49:54",
+      "last-update-date": "2020-04-26 17:49:54",
+      "match": 0.98
+    },
+    {
+      "id": "452498991",
+      "segment": "love",
+      "translation": "ty.",
+      "source": "en-GB",
+      "target": "vi-VN",
+      "quality": "74",
+      "reference": null,
+      "usage-count": 2,
+      "subject": "All",
+      "created-by": "MateCat",
+      "last-updated-by": "MateCat",
+      "create-date": "2023-03-23 03:36:13",
+      "last-update-date": "2023-03-23 03:36:13",
+      "match": 0.97
+    },
+    {
+      "id": "446118055",
+      "segment": "Love,",
+      "translation": "Đáng yêu",
+      "source": "en-GB",
+      "target": "vi-VN",
+      "quality": "74",
+      "reference": null,
+      "usage-count": 2,
+      "subject": "All",
+      "created-by": "MateCat",
+      "last-updated-by": "MateCat",
+      "create-date": "2022-06-11 10:38:31",
+      "last-update-date": "2022-06-11 10:38:31",
+      "match": 0.95
+    }
+  ]
+}

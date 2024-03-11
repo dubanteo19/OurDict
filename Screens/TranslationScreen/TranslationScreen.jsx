@@ -1,21 +1,23 @@
-import {Text, TextInput, TouchableOpacity, View} from "react-native";
+import {ActivityIndicator, Keyboard, Text, TextInput, TouchableOpacity, View} from "react-native";
 import {useState} from "react";
 
 export default function TranslationScreen() {
     const [translatedText, setTranslatedText] = useState("");
     const [text, setText] = useState("");
-
+    const [loading,setLoading] = useState(false)
     async function translate(target) {
-        console.log(text);
         let url;
+        Keyboard.dismiss()
         if (target === "vi") {
             url = "https://api.mymemory.translated.net/get?q=" + text + "!&langpair=en|vi";
         } else {
             url = "https://api.mymemory.translated.net/get?q=" + text + "!&langpair=vi|en";
         }
+        setLoading(true)
         let re = await fetch(url);
         let data = await re.json();
         setTranslatedText(data.responseData.translatedText);
+        setLoading(false)
     }
 
     const styles = {
@@ -61,9 +63,13 @@ export default function TranslationScreen() {
                     <Text style={styles.btn}>English to Vietnamese</Text>
                 </TouchableOpacity>
             </View>
-            <Text style={styles.label}>Target</Text>
+            {!!loading && <ActivityIndicator size="large" color="#056ab2" />}
+            <Text style={styles.label}>Target
+            </Text>
             <View style={styles.textContainer}>
-                <Text style={{height: 200, fontSize: 18}}>{translatedText}</Text>
+                <Text style={{height: 200, fontSize: 18}}>{translatedText}
+
+                </Text>
             </View>
         </View>
     )

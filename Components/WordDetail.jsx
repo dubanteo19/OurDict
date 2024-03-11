@@ -59,8 +59,8 @@ export default function WordDetail(props) {
                 </View>
                 {item.antonyms.length > 0 && <Text style={{fontWeight: "bold"}}>Antonyms</Text>}
                 <View style={styles.synonyms}>
-                    {item.antonyms.map((item) => {
-                        return (<TouchableOpacity onPress={() => {
+                    {item.antonyms.map((item,index) => {
+                        return (<TouchableOpacity key={item+index} onPress={() => {
                             props.handlePress(item)
                         }}>
                             <Text style={styles.pressWord}>{item}</Text>

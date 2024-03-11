@@ -1,4 +1,4 @@
-import {FlatList, Image, ScrollView, Text, View} from "react-native";
+import {FlatList, Image, LogBox, ScrollView, Text, View} from "react-native";
 import minh from "./minh.jpg"
 import phuong from "./phuong.jpg"
 import ngan from "./ngan.jpg"
@@ -6,6 +6,7 @@ import lap from "./lap.jpg"
 import quynh from "./quynh.jpg"
 
 export default function () {
+    LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
     const styles = {
         header: {
             paddingTop:10,
